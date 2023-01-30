@@ -1,3 +1,8 @@
+@font-face {
+  font-family: Impact;
+  src: url("../src/fonts/impact/impact.ttf");
+}
+
 .App {
   text-align: center;
   box-sizing: border-box;
@@ -92,4 +97,34 @@ form {
   text-align: center;
   letter-spacing: -0.1em;
   color: #ffffff;
+}
+
+.meme-container {
+  max-width: 100%;
+  max-height: 268px;
+  position: relative;
+}
+.text-container {
+  text-align: center;
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0 auto;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.text-container h2 {
+  margin: 16px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 39px;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-shadow: 0 0 15px #000000;
 }

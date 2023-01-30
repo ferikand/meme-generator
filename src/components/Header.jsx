@@ -1,4 +1,4 @@
-import logo from "../images/icons/Troll Face.png";
+import logo from "../img/Troll Face.png";
 export default function Header() {
   return (
     <header className="App-header">
