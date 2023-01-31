@@ -97,12 +97,19 @@ form {
   text-align: center;
   letter-spacing: -0.1em;
   color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .meme-container {
   max-width: 100%;
-  max-height: 268px;
+  /* height: 268px; */
   position: relative;
+}
+.meme-container img {
+  width: 100%;
 }
 .text-container {
   text-align: center;
