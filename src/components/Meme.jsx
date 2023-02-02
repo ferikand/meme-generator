@@ -4,12 +4,21 @@ import React from "react";
 import memesData from "./memesData";
 
 export default function Meme() {
-  let [imgUrl, setImgUrl] = React.useState("./images/memeimg.png");
+  const [meme, setMeme] = React.useState({
+    topText: "",
+    bottomText: "",
+    randomImage: "http://i.imgflip.com/1bij.jpg",
+  });
+  const [allMemeImages, setAllMemeImages] = React.useState(memesData);
 
-  function useNewImage() {
-    const memeData = memesData.data.memes;
-    const randomIndex = Math.floor(Math.random() * memeData.length);
-    setImgUrl((prevState) => memeData[randomIndex].url);
+  function getMemeImage() {
+    const memesArray = allMemeImages.data.memes;
+    const randomNumber = Math.floor(Math.random() * memesArray.length);
+    const url = memesArray[randomNumber].url;
+    setMeme((prevMeme) => ({
+      ...prevMeme,
+      randomImage: url,
+    }));
   }
 
   return (
@@ -24,14 +33,14 @@ export default function Meme() {
               className="input-bottom"
             />
           </div>
-          <div onClick={useNewImage} type="submit" id="submit-btn">
+          <div onClick={getMemeImage} type="submit" id="submit-btn">
             Get a new meme image 🖼
           </div>
         </form>
       </div>
       <div className="container">
         <div className="meme-container">
-          <img src={imgUrl} alt="meme" />
+          <img src={meme.randomImage} alt="meme" />
           <div className="text-container">
             <h2>text here</h2>
             <h2 className="bottomLine">and here</h2>
